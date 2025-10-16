@@ -33,8 +33,39 @@ jobsListingSection.addEventListener('click', function(event) {
   }
 })
 
-const filter = document.querySelector('#filter-technology')
+const filter = document.querySelector('#filter-location')
+const mensaje = document.querySelector('#filter-selected-value')
+const jobs = document.querySelectorAll('.job-listing-card')
 
 filter.addEventListener('change', function () {
-  console.log(filter.value)
+  const selectedValue = filter.value
+  
+  if (selectedValue) {
+    mensaje.textContent = `Has seleccionado: ${selectedValue}`
+  } else {
+    mensaje.textContent = ''
+  }
+
+  jobs.forEach(job => {
+    // const modalidad = job.dataset.modalidad
+    const modalidad = job.getAttribute('data-modalidad')
+    const isShown = selectedValue === '' || modalidad === selectedValue
+    job.style.display = isShown ? 'block' : 'none' 
+  })
 })
+
+
+
+// searchInput.addEventListener('input', function() {
+//   console.log(value)
+// })
+
+// searchInput.addEventListener('input', function() {
+//   console.log(searchInput.value)
+// })
+
+// const searchForm = document.querySelector('#empleos-search-form') 
+// searchForm.addEventListener('submit', function() {
+//   event.preventDefault()
+//   console.log('submit')
+// })
