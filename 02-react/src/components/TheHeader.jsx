@@ -1,3 +1,4 @@
+import { Link } from "../components/Link.jsx";
 export function Header() {
   return (
     <header>
@@ -18,8 +19,16 @@ export function Header() {
       </h1>
 
       <nav>
-        <a href="">Empleos</a>
+        <Link href="/search">Buscar</Link>
+        <Link href="/">Empleos</Link>
+        <Link href="">Empresas</Link>
+        <Link href="">Salarios</Link>
       </nav>
+
+      <div>
+        <Link href="">Publicar Empleos</Link>
+        <Link href="">Iniciar Sesión</Link>
+      </div>
     </header>
   );
 }
