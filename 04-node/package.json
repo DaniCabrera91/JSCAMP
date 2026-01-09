@@ -4,5 +4,8 @@
     "main": "index.js",
     "type": "module",
     "author": "dani",
-    "license": "MIT"
+    "license": "MIT",
+    "dependencies": {
+        "ms": "2.1.3"
+    }
 }
